@@ -11,8 +11,8 @@ rm -rf "$full_compose_file"
 cat "docker-compose.template.yml" >> "$full_compose_file"
 
 for dir in "$@"; do
-  if [ -d "$dir" ]; then
-    compose_part_file="$dir/service.yml"
+  if [ -d "exporters/$dir" ]; then
+    compose_part_file="exporters/$dir/service.yml"
 
     if [ -f "$compose_part_file" ]; then
       cat "$compose_part_file" >> "$full_compose_file"
