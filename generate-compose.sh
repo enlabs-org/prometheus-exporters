@@ -7,8 +7,8 @@ fi
 
 full_compose_file="docker-compose.yml"
 
-echo "version: '3.8'" > "$full_compose_file"
-echo "services:" >> "$full_compose_file"
+rm -rf "$full_compose_file"
+cat "docker-compose.template.yml" >> "$full_compose_file"
 
 for dir in "$@"; do
   if [ -d "$dir" ]; then
