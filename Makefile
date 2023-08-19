@@ -1,5 +1,5 @@
 all:
-	./generate-compose.sh node-exporter cadvisor
+	./generate-compose.sh node-exporter cadvisor blackbox
 
 docker:
 	./generate-compose.sh node-exporter cadvisor

@@ -1,0 +1,6 @@
+  blackbox:
+    image: quay.io/prometheus/blackbox-exporter:latest
+    container_name: blackbox
+    ports:
+      - 9115:9115
+    restart: unless-stopped
