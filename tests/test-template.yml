@@ -27,3 +27,15 @@ services:
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
+  blackbox:
+    image: quay.io/prometheus/blackbox-exporter:latest
+    container_name: blackbox
+    ports:
+      - 9115:9115
+    restart: unless-stopped
+  github-status:
+    image: jakubenglicky/github-status-exporter:latest
+    container_name: github-status
+    ports:
+      - 8090:8080
+    restart: unless-stopped
