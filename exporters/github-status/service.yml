@@ -1,0 +1,6 @@
+  github-status:
+    image: jakubenglicky/github-status-exporter:latest
+    container_name: github-status
+    ports:
+      - 8090:8080
+    restart: unless-stopped
